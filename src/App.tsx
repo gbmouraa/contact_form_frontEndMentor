@@ -1,9 +1,11 @@
-function App() {
+import { Form } from "./components/form";
+
+export const App = () => {
   return (
     <>
-      <span className="text-red-500">Hello world!</span>
+      <div className="flex h-screen w-full justify-center bg-[#dff1e7] px-4 pt-6">
+        <Form />
+      </div>
     </>
   );
-}
-
-export default App;
+};
