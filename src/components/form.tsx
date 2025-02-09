@@ -11,6 +11,7 @@ export const Form = () => {
       firstName: "",
       lastName: "",
       email: "",
+      terms: false,
     },
   });
 
@@ -27,7 +28,7 @@ export const Form = () => {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-white p-4">
+    <div className="w-full rounded-2xl bg-white p-4 text-[#2b4246]">
       <h1 className="mb-7 text-2xl font-bold text-[#2b4246]">Contact US</h1>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -37,7 +38,7 @@ export const Form = () => {
             <InputField label="Email Address" name="email" />
           </fieldset>
           {/* INPUT RADIO */}
-          <fieldset className="flex flex-col gap-y-4 text-[#2b4246]">
+          <fieldset className="mb-4 flex flex-col gap-y-4">
             <legend className="mb-2">
               Query type <span className="text-[#0c7d69]">*</span>
             </legend>
@@ -86,6 +87,29 @@ export const Form = () => {
                 Please select a query type
               </span>
             )}
+          </fieldset>
+          <fieldset>
+            <label>
+              Message <span className="text-#0c7d69">*</span>
+            </label>
+            <textarea
+              className="mt-2 w-full resize-none rounded border border-[#87a3a6] px-3 py-2 outline-0"
+              rows={5}
+              {...register("message")}
+              id=""
+            />
+            {errors?.message && (
+              <span className="text-sm text-red-500">
+                {errors.message?.message}
+              </span>
+            )}
+          </fieldset>
+          <fieldset>
+            <label>
+              <input type="checkbox" {...register("terms")} />I consent to be
+              contacted by the team <span className="#0c7d69">*</span>
+            </label>
+            {errors.terms && <span>{errors.terms?.message}</span>}
           </fieldset>
           <button
             type="submit"

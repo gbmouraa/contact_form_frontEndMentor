@@ -5,12 +5,14 @@ interface InputProps {
   label: string;
   name: string;
   type?: string;
+  className?: string;
 }
 
 export const InputField: React.FC<InputProps> = ({
   label,
   name,
   type = "text",
+  className,
 }) => {
   const {
     control,
@@ -27,7 +29,7 @@ export const InputField: React.FC<InputProps> = ({
         control={control}
         render={({ field }) => (
           <input
-            className={`cursor-pointer rounded border border-[#87a3a6] px-4 py-2 outline-0 hover:border-[#0c7d69] ${errors[name] && "border-red-500"}`}
+            className={`${className || ""} cursor-pointer rounded border border-[#87a3a6] px-4 py-2 outline-0 hover:border-[#0c7d69] ${errors[name] && "border-red-500"}`}
             {...field}
             type={type}
           />
