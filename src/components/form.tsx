@@ -140,7 +140,7 @@ export const Form = () => {
               />
               {/* CHECKBOX STYLIZED */}
               <div
-                className={`${methods.watch("terms") && "absolute border-transparent"} mr-2 min-h-4 min-w-4 border border-[#87a3a6]`}
+                className={`${methods.watch("terms") && "absolute border-transparent"} border-grey-medium mr-2 min-h-4 min-w-4 border`}
               />
               <div
                 className={`${methods.watch("terms") ? "mr-2 block" : "hidden"}`}
