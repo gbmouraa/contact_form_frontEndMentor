@@ -17,8 +17,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/gbmouraa/contact_form_frontEndMentor)
-- Live Site URL: [Add live site URL here](https://contact-form-front-end-mentor-three.vercel.app/)
+[Link para o site](https://contact-form-front-end-mentor-three.vercel.app/)
 
 ### Built with
 
