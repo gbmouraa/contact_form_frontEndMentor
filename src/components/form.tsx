@@ -42,9 +42,11 @@ export const Form = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="relative h-fit w-full max-w-[700px] rounded-2xl bg-white p-7 text-[#2b4246]"
+          className="text-grey-darker relative h-fit w-full max-w-[700px] rounded-2xl bg-white p-7"
         >
-          <h1 className="mb-7 text-2xl font-bold text-[#2b4246]">Contact US</h1>
+          <h1 className="text-grey-darker mb-7 text-2xl font-bold">
+            Contact US
+          </h1>
           <fieldset className="mb-4">
             <div className="mb-3 flex flex-col gap-x-5 space-y-3 md:flex-row">
               <InputField
@@ -59,12 +61,12 @@ export const Form = () => {
           {/* INPUT RADIO */}
           <fieldset className="mb-4 flex flex-col gap-y-4">
             <legend className="mb-2">
-              Query type <span className="text-[#0c7d69]">*</span>
+              Query type <span className="text-green-medium">*</span>
             </legend>
             <div className="flex flex-col justify-between gap-5 md:flex-row">
               <div className="w-full">
                 <label
-                  className={`flex cursor-pointer items-center rounded border border-[#87a3a6] px-5 py-2 ${methods.watch("queryType") === "general enquity" && "bg-[#dff1e7]"}`}
+                  className={`border-grey-medium flex cursor-pointer items-center rounded border px-5 py-2 ${methods.watch("queryType") === "general enquity" && "bg-green-lighter"}`}
                 >
                   <span
                     className={`${methods.watch("queryType") === "general enquity" && "border-0"} mr-3 block h-4 w-4 rounded-full border border-gray-300`}
@@ -86,7 +88,7 @@ export const Form = () => {
               </div>
               <div className="w-full">
                 <label
-                  className={`flex cursor-pointer items-center rounded border border-[#87a3a6] px-5 py-2 ${methods.watch("queryType") === "support request" && "bg-[#dff1e7]"}`}
+                  className={`border-grey-medium flex cursor-pointer items-center rounded border px-5 py-2 ${methods.watch("queryType") === "support request" && "bg-green-lighter"}`}
                 >
                   <span
                     className={`${methods.watch("queryType") === "support request" && "border-0"} mr-3 block h-4 w-4 rounded-full border border-gray-300`}
@@ -115,10 +117,10 @@ export const Form = () => {
           </fieldset>
           <fieldset>
             <label>
-              Message <span className="text-#0c7d69">*</span>
+              Message <span className="text-green-medium">*</span>
             </label>
             <textarea
-              className={`${errors.message && "border-red-500"} mt-2 w-full resize-none rounded border border-[#87a3a6] px-3 py-2 outline-0`}
+              className={`${errors.message && "border-red-500"} hover:border-green-medium focus:border-green-medium border-grey-medium mt-2 w-full resize-none rounded border px-3 py-2 outline-0`}
               rows={5}
               {...register("message")}
               id=""
@@ -153,7 +155,7 @@ export const Form = () => {
 
               <p>
                 I consent to be contacted by the team{" "}
-                <span className="#0c7d69">*</span>
+                <span className="text-green-medium">*</span>
               </p>
             </label>
             {errors.terms && (
@@ -164,7 +166,7 @@ export const Form = () => {
           </fieldset>
           <button
             type="submit"
-            className="w-full cursor-pointer rounded bg-[#0c7d69] py-2 text-white transition-all hover:bg-[#2b4246]"
+            className="bg-green-medium hover:bg-grey-darker w-full cursor-pointer rounded py-2 text-white transition-all"
           >
             Submit
           </button>

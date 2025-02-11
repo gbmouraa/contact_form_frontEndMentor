@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-green-lighter: #dff1e7;
+  --color-green-medium: #0c7d69;
+  --color-grey-medium: #87a3a6;
+  --color-grey-darker: #2b4246;
+}
+
 body {
   font-family: "Karla";
   background-color: #dff1e7;

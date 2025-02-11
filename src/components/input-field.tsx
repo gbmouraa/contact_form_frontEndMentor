@@ -20,16 +20,16 @@ export const InputField: React.FC<InputProps> = ({
   } = useFormContext();
 
   return (
-    <div className="flex w-full flex-col gap-1.5 text-[#2b4246]">
+    <div className="text-grey-darker flex w-full flex-col gap-1.5">
       <label>
-        {label} <span className="text-[#0c7d69]">*</span>
+        {label} <span className="text-green-medium">*</span>
       </label>
       <Controller
         name={name}
         control={control}
         render={({ field }) => (
           <input
-            className={`${className || ""} cursor-pointer rounded border border-[#87a3a6] px-4 py-2 outline-0 hover:border-[#0c7d69] focus:border-[#0c7d69] ${errors[name] && "border-red-500"}`}
+            className={`${className || ""} border-grey-medium hover:border-green-medium focus:border-green-medium cursor-pointer rounded border px-4 py-2 outline-0 ${errors[name] && "border-red-500"}`}
             {...field}
             type={type}
           />
