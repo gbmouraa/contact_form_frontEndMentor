@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Contact form solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj).
 
-Currently, two official plugins are available:
+## The challenge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Users should be able to:
 
-## Expanding the ESLint configuration
+- Complete the form and see a success toast message upon successful submission
+- Receive form validation messages if:
+  - A required field has been missed
+  - The email address is not formatted correctly
+- Complete the form only using their keyboard
+- Have inputs, error messages, and the success message announced on their screen reader
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Links
 
-- Configure the top-level `parserOptions` property like this:
+- Solution URL: [Add solution URL here](https://github.com/gbmouraa/contact_form_frontEndMentor)
+- Live Site URL: [Add live site URL here](https://contact-form-front-end-mentor-three.vercel.app/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Built with
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Vite + React
+- Typescript
+- Tailwind
+- React hook-form with zod for form validations
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Author
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Website - [Gabriel Moura](https://gmouradev.netlify.app/)
+- Frontend Mentor - [@gbmouraa](https://www.frontendmentor.io/profile/gbmouraa)
+- Portfólio - [Gabriel Moura](https://gmouradev.netlify.app/)
