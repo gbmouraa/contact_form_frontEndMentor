@@ -1,11 +1,14 @@
 import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller, Control, FieldErrors } from "react-hook-form";
+import { FormData } from "../hooks/useMyForm";
 
 interface InputProps {
   label: string;
-  name: string;
+  name: keyof FormData;
   type?: string;
   className?: string;
+  control?: Control<FormData>;
+  errors: FieldErrors<FormData>;
 }
 
 export const InputField: React.FC<InputProps> = ({
@@ -13,12 +16,9 @@ export const InputField: React.FC<InputProps> = ({
   name,
   type = "text",
   className,
+  control,
+  errors,
 }) => {
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
-
   return (
     <div className="text-grey-darker flex w-full flex-col gap-1.5">
       <label>
@@ -32,6 +32,7 @@ export const InputField: React.FC<InputProps> = ({
             className={`${className || ""} border-grey-medium hover:border-green-medium focus:border-green-medium cursor-pointer rounded border px-4 py-2 outline-0 ${errors[name] && "border-red-500"}`}
             {...field}
             type={type}
+            value={typeof field.value === "boolean" ? "" : field.value}
           />
         )}
       />
